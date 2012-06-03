@@ -1,2 +1,11 @@
 h1= title
-p Welcome to #{title}
+#projects
+	- if (typeof(projects) != 'undefined')
+		- each project in projects
+			div.project
+				div.created_at= project.created_at
+				div.title 
+					a(href="/blog/"+project._id)!= project.title
+				div.url 
+					a(href="http://"+project.url)!= project.url					
+				div.body= project.body
