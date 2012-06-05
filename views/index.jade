@@ -7,5 +7,12 @@ h1= title
 				div.title 
 					a(href="/blog/"+project._id)!= project.title
 				div.url 
-					a(href="http://"+project.url)!= project.url					
+					a(href="http://"+project.url)!= project.url
+				
+				- if (typeof(project.image) != 'undefined')
+					div.image
+						- var a = project.imageBase64
+						span=a
+						img(src="/public/images/uploads/"+project.image.filename)
+
 				div.body= project.body

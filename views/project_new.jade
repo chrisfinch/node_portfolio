@@ -1,5 +1,5 @@
 h1= title
-form( method="post")
+form( method="post", enctype="multipart/form-data")
 	div
 		div
 			span Title :
@@ -9,6 +9,10 @@ form( method="post")
 			input(type="text", name="url", id="editProjectUrl")            	
 		div
 			span Body :
-			textarea( name="body", rows=20, id="editProjectBody)
+			textarea( name="body", rows=20, id="editProjectBody")
+		div
+			span Image :
+			input(type="file", name="image", id="image")
+
 		div#editArticleSubmit
 			input(type="submit", value="Send")
